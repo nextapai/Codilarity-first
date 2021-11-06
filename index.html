@@ -1,0 +1,756 @@
+
+<html>
+  <head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+          var background = document.createElement('div');
+//background.style.backgroundImage = 'url(https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80)';
+background.style.backgroundSize = 'cover';
+background.style.width = '100%';
+background.style.height = '450%';
+background.style.position = 'absolute';
+background.style.background = '#000000'
+background.style.top = '0';
+background.style.left = '0';
+document.body.appendChild(background);
+
+
+
+//make a text "Codilarity"
+var textmain = document.createElement('div');
+textmain.innerHTML = 'Codilarity';
+textmain.style.fontFamily = 'Arial';
+textmain.style.fontSize = '30px';
+textmain.style.height = '6%';textmain.style.width = '20%';
+textmain.style.color = '#ffffff';
+textmain.style.position = 'absolute';
+textmain.style.top = '1%';
+textmain.style.left = '5%';
+textmain.style.fontWeight = 'bold';
+textmain.style.zIndex = '2';
+textmain.style.opacity = '1';
+textmain.style.filter = 'blur(0px)';
+textmain.style.cursor = 'pointer';
+textmain.style.outline = 'none';
+document.body.appendChild(textmain);
+
+//when mouse hovers add some effects like shadown in the downward direction
+textmain.onmouseover = function() {
+  textmain.style.filter = 'blur(1px)';
+  textmain.style.opacity = '0.8';
+  textmain.style.cursor = 'pointer';
+}
+
+//when mouse leaves remove the effects
+textmain.onmouseout = function() {
+  textmain.style.filter = 'blur(0px)';
+  textmain.style.opacity = '1';
+  textmain.style.cursor = 'pointer';
+}
+
+//make text more round
+textmain.style.borderRadius = '5%';
+
+
+
+/* make a black navbar header at the screen top */
+var navbar = document.createElement('div');
+navbar.style.position = 'absolute';
+navbar.style.height = '7%';
+navbar.style.width = '100%';
+navbar.style.top = '0%';
+navbar.style.left = '0%';
+navbar.style.opacity = '1.0';
+navbar.style.backgroundColor = 'black';
+document.body.appendChild(navbar);
+
+/* align buttons products, blogs, manual, logout right next to each other from left to right inside navbar */
+var products = document.createElement('button');
+products.style.position = 'absolute';
+products.innerHTML = 'Products';
+products.style.float = 'right';
+products.style.left = '60%';
+products.style.top = '2%';
+products.style.width = '10%';
+products.style.height = '100%';
+products.style.textAlign = 'center';
+products.style.backgroundColor = '#000000';
+products.style.color = '#ffffff';
+products.style.fontSize = '15px';
+products.style.borderRadius = '10px';
+products.style.borderColor = "#000000";
+navbar.appendChild(products);
+
+var blogs = document.createElement('button');
+blogs.innerHTML = 'Blogs';
+blogs.style.float = 'right';
+blogs.style.left = '70%';
+blogs.style.top = '2%';
+blogs.style.position = 'absolute';
+blogs.style.width = '10%';
+blogs.style.height = '100%';
+blogs.style.textAlign = 'center';
+blogs.style.backgroundColor = '#000000';
+blogs.style.color = '#ffffff';
+blogs.style.fontSize = '15px';
+blogs.style.borderRadius = '10px';
+blogs.style.borderColor = "#000000";
+navbar.appendChild(blogs);
+
+var manual = document.createElement('button');
+manual.innerHTML = 'Manual';
+manual.style.float = 'right';
+manual.style.left = '80%';
+manual.style.top = '2%';
+manual.style.position = 'absolute';
+manual.style.width = '10%';
+manual.style.height = '100%';
+manual.style.textAlign = 'center';
+manual.style.backgroundColor = '#000000';
+manual.style.color = '#ffffff';
+manual.style.fontSize = '15px';
+manual.style.borderRadius = '10px';
+manual.style.borderColor = "#000000";
+navbar.appendChild(manual);
+
+var logout = document.createElement('button');
+logout.innerHTML = 'Sign up';
+logout.style.float = 'right';
+logout.style.left = '92%';
+logout.style.top = '5%';
+logout.style.position = 'absolute';
+logout.style.width = '8%';
+logout.style.height = '90%';
+logout.style.textAlign = 'center';
+logout.style.backgroundColor = '#ffffff';
+logout.style.borderColor = "10px #000000";
+logout.style.color = '#000000';
+logout.style.fontSize = '15px';
+logout.style.borderRadius = '10px';
+navbar.appendChild(logout);
+
+
+var line = document.createElement('div');
+line.style.height = '5%';
+line.style.position = 'absolute';
+line.style.width = '100%';
+line.style.left = '0%';
+line.style.top = '99%';
+line.style.background = 'linear-gradient(to right, #F312CF, #00B2FF)';
+navbar.appendChild(line);
+
+// Codilarity Logo
+
+var img = document.createElement('img');
+img.style.position = 'absolute';
+img.src = 'https://github.com/ashwin-2001/Codilarity/blob/main/C%20square%20logo.png?raw=true';
+navbar.appendChild(img);
+
+/* make it small */
+img.style.width = '48px';
+img.style.height = '90%';
+img.style.left = '2%';
+img.style.top = '0%';
+
+//when the mouse hovers over above buttons, make the fonts of button glow
+products.addEventListener('mouseover', function(){
+products.style.color = '#F312CF';
+products.style.fontSize = '17px';
+});
+products.addEventListener('mouseout', function(){
+products.style.color = '#ffffff';
+products.style.fontSize = '15px';
+});
+blogs.addEventListener('mouseover', function(){
+blogs.style.color = '#F312CF';
+blogs.style.fontSize = '17px';
+});
+blogs.addEventListener('mouseout', function(){
+blogs.style.color = '#ffffff';
+blogs.style.fontSize = '15px';
+});
+manual.addEventListener('mouseover', function(){
+manual.style.color = '#F312CF';
+manual.style.fontSize = '17px';
+});
+manual.addEventListener('mouseout', function(){
+manual.style.color = '#ffffff';
+manual.style.fontSize = '15px';
+});
+logout.addEventListener('mouseover', function(){
+logout.style.color = 'red';
+logout.style.fontSize = '17px';
+});
+logout.addEventListener('mouseout', function(){
+logout.style.color = '#000000';
+logout.style.fontSize = '15px';
+});
+
+
+products.addEventListener('click', function() {
+  window.open('codilarity_Main.html', '_self');
+});
+manual.addEventListener('click', function() {
+  window.open('codilarity_Manual.html', '_self');
+});
+logout.addEventListener('click', function() {
+  window.open('codilarity_SignIn.html', '_self');
+});
+
+
+// make a big bold text "Manual" 120px at the center in a white font
+var hey = document.createElement('div');
+hey.innerHTML = 'Hey, it\'s Codilarity';
+hey.style.fontFamily = 'Arial';
+hey.style.fontSize = '40px';
+hey.style.height = '6%';hey.style.width = '40%';
+hey.style.color = '#ffffff';
+hey.style.position = 'absolute';
+hey.style.top = '35%';
+hey.style.left = '40%';
+hey.style.fontWeight = 'bold';
+hey.style.zIndex = '2';
+hey.style.opacity = '1';
+hey.style.filter = 'blur(0px)';
+document.body.appendChild(hey);
+
+
+var tagline1 = document.createElement('div');
+tagline1.innerHTML = 'Singularity of Coding';
+tagline1.style.fontFamily = 'Arial Black';
+tagline1.style.fontSize = '90px';
+tagline1.style.height = '6%';tagline1.style.width = '70%';
+tagline1.style.color = '#ffffff';
+tagline1.style.position = 'absolute';
+tagline1.style.top = '41%';
+tagline1.style.left = '17%';
+tagline1.style.fontWeight = 'bold';
+tagline1.style.zIndex = '2';
+tagline1.style.opacity = '1';
+tagline1.style.filter = 'blur(0px)';
+document.body.appendChild(tagline1);
+
+var tagline2 = document.createElement('div');
+tagline2.innerHTML = 'It can write, analyze, solve bugs, answer your weird questions in seconds, and more! Only free autocoding tool available in market. Capable of understanding each and every variable meaning of your code.';
+tagline2.style.fontFamily = 'Arial';
+tagline2.style.fontSize = '20px';
+tagline2.style.height = '6%';tagline2.style.width = '72%';
+tagline2.style.color = '#A2A2A2';
+tagline2.style.position = 'absolute';
+tagline2.style.textAlign = 'center';
+tagline2.style.top = '60%';
+tagline2.style.left = '15%';
+tagline2.style.fontWeight = 'normal';
+tagline2.style.zIndex = '2';
+tagline2.style.opacity = '1';
+tagline2.style.filter = 'blur(0px)';
+document.body.appendChild(tagline2);
+
+
+//make another button with same parameters
+var GetStartedButton = document.createElement('button');
+GetStartedButton.innerHTML = 'Get Started';
+GetStartedButton.style.width = '30%';
+GetStartedButton.style.height = '7%';
+GetStartedButton.style.position = 'absolute';
+GetStartedButton.style.top = '70%';
+GetStartedButton.style.left = '35%';
+GetStartedButton.style.background = 'linear-gradient(to right, #000000, #000000,#F312CF, #00B2FF, #000000,#000000)';
+GetStartedButton.style.color = '#ffffff';
+GetStartedButton.style.fontFamily = 'Arial';
+GetStartedButton.style.fontSize = '15px';
+GetStartedButton.style.fontWeight = 'bold';
+GetStartedButton.style.textAlign = 'center';
+GetStartedButton.style.borderRadius = '5%';
+GetStartedButton.style.boxShadow = '0 0 20px #000000';
+GetStartedButton.style.border = '1px solid #000000';
+GetStartedButton.style.margin = '0px';
+GetStartedButton.style.padding = '5px';
+GetStartedButton.style.cursor = 'pointer';
+GetStartedButton.style.outline = 'none';
+GetStartedButton.style.zIndex = '2';
+GetStartedButton.style.opacity = '1';
+GetStartedButton.style.filter = 'blur(0px)';
+document.body.appendChild(GetStartedButton);
+
+GetStartedButton.addEventListener('mouseover', function () {
+GetStartedButton.style.left = '40%';
+GetStartedButton.style.width = '20%';
+});
+// when mouse moves out of the button fontsize changes to 15 and outline is removed
+GetStartedButton.addEventListener('mouseout', function () {
+GetStartedButton.style.left = '35%';
+GetStartedButton.style.width = '30%';
+});
+
+GetStartedButton.addEventListener('click', function() {
+  window.open('codilarity_SignIn.html', '_self');
+});
+
+// make a wide grey rectangle just below Manual
+var frame1 = document.createElement('div');
+frame1.style.height = '100%';frame1.style.width = '100%';
+frame1.style.backgroundColor = '#000000';
+frame1.style.position = 'absolute';
+frame1.style.top = '150%';
+frame1.style.left = '0%';
+frame1.style.borderRadius = '20px';
+frame1.style.zIndex = '1';
+document.body.appendChild(frame1);
+frame1.style.opacity = '1';
+
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+line.style.transform = 'rotate(30deg)';
+frame1.appendChild(line);
+
+
+// add a text "Code Flipper" at the top of line in a bold big named font
+var titleframe1 = document.createElement('div');
+titleframe1.innerHTML = 'What is Codilarity?';
+titleframe1.style.fontFamily = 'Arial';
+titleframe1.style.fontSize = '80px';
+titleframe1.style.height = '6%';titleframe1.style.width = '70%';
+titleframe1.style.color = '#ffffff';
+titleframe1.style.position = 'absolute';
+titleframe1.style.fontWeight = 'bold';
+titleframe1.style.top = '45%';
+titleframe1.style.left = '5%';
+titleframe1.style.zIndex = '2';
+frame1.appendChild(titleframe1);
+
+//content of frame1 is a big text description of the project
+var textframe1 = document.createElement('div');
+textframe1.style.height = '50%';textframe1.style.width = '30%';
+textframe1.style.position = 'absolute';
+textframe1.style.top = '40%';
+textframe1.style.left = '60%';
+textframe1.style.zIndex = '2';
+textframe1.style.color = '#ffffff';
+textframe1.style.fontFamily = 'Arial';
+textframe1.style.fontSize = '20px';
+textframe1.style.textAlign = 'justify';
+textframe1.style.lineHeight = '30px';
+textframe1.style.padding = '10px';
+textframe1.innerHTML = '<p>Artificial Intelligence trained to generate code and code statistics.</p><p>We contacted many experienced developers to write codes in different languages. The code generated is copyright, Plagrisim free</p>';
+frame1.appendChild(textframe1);
+
+
+
+//frame2
+
+var frame2 = document.createElement('div');
+frame2.style.height = '100%';frame2.style.width = '100%';
+frame2.style.backgroundColor = '#00000f';
+frame2.style.position = 'absolute';
+frame2.style.top = '260%';
+frame2.style.left = '0%';
+frame2.style.borderRadius = '20px';
+frame2.style.zIndex = '2';
+//frame2.style.boxShadow = "0px 0px 152px 2px #F312CF";
+document.body.appendChild(frame2);
+frame2.style.opacity = '1';
+var line = document.createElement('div');
+line.style.height = '0.5%';
+line.style.position = 'absolute';
+line.style.width = '100%';
+line.style.left = '0%';
+line.style.top = '30%';
+line.style.background = 'linear-gradient(to right, #000000, #F312CF, #00B2FF, #000000)';
+//frame2.appendChild(line);
+
+
+// add a text "Codroid" at the top of line in a bold big named font
+var titleframe2 = document.createElement('div');
+titleframe2.innerHTML = 'A magical connection to your code';
+titleframe2.style.fontFamily = 'Arial';
+titleframe2.style.fontSize = '60px';
+titleframe2.style.height = '6%';titleframe2.style.width = '50%';
+titleframe2.style.color = '#ffffff';
+titleframe2.style.position = 'absolute';
+titleframe2.style.fontWeight = 'bold';
+titleframe2.style.textAlign = 'center';
+titleframe2.style.top = '8%';
+titleframe2.style.left = '25%';
+titleframe2.style.zIndex = '2';
+frame2.appendChild(titleframe2);
+
+
+
+var frame1inframe2 = document.createElement('div');
+frame1inframe2.style.height = '33%';
+frame1inframe2.style.width = '30%';
+frame1inframe2.style.backgroundColor = '#242424';
+frame1inframe2.style.position = 'absolute';
+frame1inframe2.style.top = '32%';
+frame1inframe2.style.left = '2%';
+frame1inframe2.style.borderRadius = '20px';
+frame1inframe2.style.zIndex = '1';
+frame1inframe2.style.opacity = '0.6';
+frame2.appendChild(frame1inframe2);
+
+
+var frame2inframe2 = document.createElement('div');
+frame2inframe2.style.height = '33%';
+frame2inframe2.style.width = '30%';
+frame2inframe2.style.backgroundColor = '#242424';
+frame2inframe2.style.position = 'absolute';
+frame2inframe2.style.top = '32%';
+frame2inframe2.style.left = '34%';
+frame2inframe2.style.borderRadius = '20px';
+frame2inframe2.style.zIndex = '1';
+frame2inframe2.style.opacity = '0.6';
+frame2.appendChild(frame2inframe2);
+
+
+var frame3inframe2 = document.createElement('div');
+frame3inframe2.style.height = '33%';
+frame3inframe2.style.width = '30%';
+frame3inframe2.style.backgroundColor = '#242424';
+frame3inframe2.style.position = 'absolute';
+frame3inframe2.style.top = '32%';
+frame3inframe2.style.left = '66%';
+frame3inframe2.style.borderRadius = '20px';
+frame3inframe2.style.zIndex = '1';
+frame3inframe2.style.opacity = '0.6';
+frame2.appendChild(frame3inframe2);
+
+
+var frame4inframe2 = document.createElement('div');
+frame4inframe2.style.height = '33%';
+frame4inframe2.style.width = '30%';
+frame4inframe2.style.backgroundColor = '#242424';
+frame4inframe2.style.position = 'absolute';
+frame4inframe2.style.top = '68%';
+frame4inframe2.style.left = '2%';
+frame4inframe2.style.borderRadius = '20px';
+frame4inframe2.style.zIndex = '1';
+frame4inframe2.style.opacity = '0.6';
+frame2.appendChild(frame4inframe2);
+
+
+var frame5inframe2 = document.createElement('div');
+frame5inframe2.style.height = '33%';
+frame5inframe2.style.width = '30%';
+frame5inframe2.style.backgroundColor = '#242424';
+frame5inframe2.style.position = 'absolute';
+frame5inframe2.style.top = '68%';
+frame5inframe2.style.left = '34%';
+frame5inframe2.style.borderRadius = '20px';
+frame5inframe2.style.zIndex = '1';
+frame5inframe2.style.opacity = '0.6';
+frame2.appendChild(frame5inframe2);
+
+
+var frame6inframe2 = document.createElement('div');
+frame6inframe2.style.height = '33%';
+frame6inframe2.style.width = '30%';
+frame6inframe2.style.backgroundColor = '#242424';
+frame6inframe2.style.position = 'absolute';
+frame6inframe2.style.top = '68%';
+frame6inframe2.style.left = '66%';
+frame6inframe2.style.borderRadius = '20px';
+frame6inframe2.style.zIndex = '1';
+frame6inframe2.style.opacity = '0.6';
+frame2.appendChild(frame6inframe2);
+
+//all frames should look like glass, and when the mouse hovers they should be visible with some astonishing effects.
+frame1inframe2.onmouseover = function() {
+    frame1inframe2.style.opacity = '1';
+}
+frame1inframe2.onmouseout = function() {
+    frame1inframe2.style.opacity = '0.6';
+}
+frame2inframe2.onmouseover = function() {
+    frame2inframe2.style.opacity = '1';
+}
+frame2inframe2.onmouseout = function() {
+    frame2inframe2.style.opacity = '0.6';
+}
+frame3inframe2.onmouseover = function() {
+    frame3inframe2.style.opacity = '1';
+}
+frame3inframe2.onmouseout = function() {
+    frame3inframe2.style.opacity = '0.6';
+}
+frame4inframe2.onmouseover = function() {
+    frame4inframe2.style.opacity = '1';
+}
+frame4inframe2.onmouseout = function() {
+    frame4inframe2.style.opacity = '0.6';
+}
+frame5inframe2.onmouseover = function() {
+    frame5inframe2.style.opacity = '1';
+}
+frame5inframe2.onmouseout = function() {
+    frame5inframe2.style.opacity = '0.6';
+}
+frame6inframe2.onmouseover = function() {
+    frame6inframe2.style.opacity = '1';
+}
+frame6inframe2.onmouseout = function() {
+    frame6inframe2.style.opacity = '0.6';
+}
+
+
+
+
+// Make headings and descriptions for all frames
+var heading1 = document.createElement('h1');
+heading1.style.position = 'absolute';
+heading1.style.top = '30%';
+heading1.style.left = '8%';
+heading1.style.fontSize = '40px';
+heading1.style.color = '#ffffff';
+heading1.style.fontFamily = 'Arial';
+heading1.style.fontWeight = 'bold';
+heading1.innerHTML = 'Codeflipper';
+frame1inframe2.appendChild(heading1);
+
+
+var heading2 = document.createElement('h1');
+heading2.style.position = 'absolute';
+heading2.style.top = '30%';
+heading2.style.left = '8%';
+heading2.style.fontSize = '40px';
+heading2.style.color = '#ffffff';
+heading2.style.fontFamily = 'Arial';
+heading2.style.fontWeight = 'bold';
+heading2.innerHTML = 'CodeFlip';
+frame2inframe2.appendChild(heading2);
+
+
+var heading3 = document.createElement('h1');
+heading3.style.position = 'absolute';
+heading3.style.top = '30%';
+heading3.style.left = '8%';
+heading3.style.fontSize = '40px';
+heading3.style.color = '#ffffff';
+heading3.style.fontFamily = 'Arial';
+heading3.style.fontWeight = 'bold';
+heading3.innerHTML = 'CodeFlip';
+frame3inframe2.appendChild(heading3);
+
+
+var heading4 = document.createElement('h1');
+heading4.style.position = 'absolute';
+heading4.style.top = '30%';
+heading4.style.left = '8%';
+heading4.style.fontSize = '40px';
+heading4.style.color = '#ffffff';
+heading4.style.fontFamily = 'Arial';
+heading4.style.fontWeight = 'bold';
+heading4.innerHTML = 'CodeFlip';
+frame4inframe2.appendChild(heading4);
+
+
+var heading5 = document.createElement('h1');
+heading5.style.position = 'absolute';
+heading5.style.top = '30%';
+heading5.style.left = '8%';
+heading5.style.fontSize = '40px';
+heading5.style.color = '#ffffff';
+heading5.style.fontFamily = 'Arial';
+heading5.style.fontWeight = 'bold';
+heading5.innerHTML = 'CodeFlip';
+frame5inframe2.appendChild(heading5);
+
+
+var heading6 = document.createElement('h1');
+heading6.style.position = 'absolute';
+heading6.style.top = '30%';
+heading6.style.left = '8%';
+heading6.style.fontSize = '40px';
+heading6.style.color = '#ffffff';
+heading6.style.fontFamily = 'Arial';
+heading6.style.fontWeight = 'bold';
+heading6.innerHTML = 'CodeFlip';
+frame6inframe2.appendChild(heading6);
+
+
+var description1 = document.createElement('p');
+description1.style.position = 'absolute';
+description1.style.top = '57%';
+description1.style.left = '8%';
+description1.style.fontSize = '18px';
+description1.style.color = '#ffffff';
+description1.style.fontFamily = 'Arial';
+description1.innerHTML = "CodeFlip is a free online coding environment designed to make learning to code fun and easy.";
+frame1inframe2.appendChild(description1);
+
+
+var description2 = document.createElement('p');
+description2.style.position = 'absolute';
+description2.style.top = '57%';
+description2.style.left = '8%';
+description2.style.fontSize = '18px';
+description2.style.color = '#ffffff';
+description2.style.fontFamily = 'Arial';
+description2.innerHTML = "Codeflipper is a free online coding environment designed to make learning to code fun and easy.";
+frame2inframe2.appendChild(description2);
+
+
+var description3 = document.createElement('p');
+description3.style.position = 'absolute';
+description3.style.top = '57%';
+description3.style.left = '8%';
+description3.style.fontSize = '18px';
+description3.style.color = '#ffffff';
+description3.style.fontFamily = 'Arial';
+description3.innerHTML = "CodeFlip is a free online coding environment designed to make learning to code fun and easy.";
+frame3inframe2.appendChild(description3);
+
+
+var description4 = document.createElement('p');
+description4.style.position = 'absolute';
+description4.style.top = '57%';
+description4.style.left = '8%';
+description4.style.fontSize = '18px';
+description4.style.color = '#ffffff';
+description4.style.fontFamily = 'Arial';
+description4.innerHTML = "CodeFlip is a free online coding environment designed to make learning to code fun and easy.";
+frame4inframe2.appendChild(description4);
+
+
+var description5 = document.createElement('p');
+description5.style.position = 'absolute';
+description5.style.top = '57%';
+description5.style.left = '8%';
+description5.style.fontSize = '18px';
+description5.style.color = '#ffffff';
+description5.style.fontFamily = 'Arial';
+description5.innerHTML = "CodeFlip is a free online coding environment designed to make learning to code fun and easy.";
+frame5inframe2.appendChild(description5);
+
+
+var description6 = document.createElement('p');
+description6.style.position = 'absolute';
+description6.style.top = '57%';
+description6.style.left = '8%';
+description6.style.fontSize = '18px';
+description6.style.color = '#ffffff';
+description6.style.fontFamily = 'Arial';
+description6.innerHTML = "CodeFlip is a free online coding environment designed to make learning to code fun and easy.";
+frame6inframe2.appendChild(description6);
+
+// frame 3 is a clone of frame 1, which is used for codroid
+//add a frame 3 
+var frame3 = document.createElement('div');
+frame3.style.height = '100%';frame3.style.width = '100%';
+frame3.style.backgroundColor = '#000000';
+frame3.style.position = 'absolute';
+frame3.style.top = '370%';
+frame3.style.left = '0%';
+frame3.style.borderRadius = '20px';
+frame3.style.zIndex = '2';
+document.body.appendChild(frame3);
+frame3.style.opacity = '1';
+
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+frame3.appendChild(line);
+
+
+// add a text "Code Flipper" at the top of line in a bold big named font
+var titleframe3 = document.createElement('div');
+titleframe3.innerHTML = 'Give it a Try!';
+titleframe3.style.fontFamily = 'Arial';
+titleframe3.style.fontSize = '100px';
+titleframe3.style.height = '6%';titleframe3.style.width = '70%';
+titleframe3.style.color = '#ffffff';
+titleframe3.style.position = 'absolute';
+titleframe3.style.fontWeight = 'bold';
+titleframe3.style.top = '35%';
+titleframe3.style.left = '8%';
+titleframe3.style.zIndex = '2';
+frame3.appendChild(titleframe3);
+
+// make button with same parameters as textframe3
+var button = document.createElement('button');
+button.style.height = '15%';
+button.style.width = '20%';
+button.style.position = 'absolute';
+button.style.top = '35%';
+button.style.left = '60%';
+button.style.zIndex = '2';
+button.style.color = '#000000';
+button.style.background = '#ffffff';
+button.style.borderRadius = '10px';
+button.style.fontFamily = 'Arial';
+button.style.fontSize = '35px';
+button.style.textAlign = 'center';
+button.innerHTML = 'Sign up now';
+frame3.appendChild(button);
+
+button.addEventListener('mouseover', function(){
+button.style.color = '#F312CF';
+});
+button.addEventListener('mouseout', function(){
+button.style.color = '#000000';
+});
+
+button.addEventListener('click', function() {
+  window.open('codilarity_SignIn.html', '_self');
+});
+
+
+/* make a 30% height and 40% width rectangle with shadow at the center of screen */
+var rect = document.createElement('div');
+rect.style.position = 'absolute';
+rect.style.width = '100%';
+rect.style.height = '50%';
+rect.style.boxShadow = '0 0 10px #000';
+rect.style.backgroundColor = '#000000';
+rect.style.left = '0%';
+rect.style.top = '440%';
+document.body.appendChild(rect);
+
+/* add instagram,facebook,linkedin icons at the bottom right corner of small rectangle at center */
+var instagram = document.createElement('div');
+instagram.style.position = 'absolute';
+instagram.style.width = '2%';
+instagram.style.height = '8%';
+instagram.style.backgroundImage = 'url(https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png)';
+instagram.style.backgroundSize = 'cover';
+instagram.style.backgroundPosition = 'center';
+instagram.style.left = '5%';
+instagram.style.top = '80%';
+rect.appendChild(instagram);
+var facebook = document.createElement('div');
+facebook.style.position = 'absolute';
+facebook.style.width = '2%';
+facebook.style.height = '8%';
+facebook.style.backgroundImage = 'url(https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png)';
+facebook.style.backgroundSize = 'cover';
+facebook.style.backgroundPosition = 'center';
+facebook.style.left = '10%';
+facebook.style.top = '80%';
+rect.appendChild(facebook);
+var linkedin = document.createElement('div');
+linkedin.style.position = 'absolute';
+linkedin.style.width = '2%';
+linkedin.style.height = '8%';
+linkedin.style.backgroundImage = 'url(https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png)';
+linkedin.style.backgroundSize = 'cover';
+linkedin.style.backgroundPosition = 'center';
+linkedin.style.left = '15%';
+linkedin.style.top = '80%';
+rect.appendChild(linkedin);
+
+
+
+});
+      </script>
+  </head>
+</html>

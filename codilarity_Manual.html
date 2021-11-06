@@ -1,0 +1,444 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            var background = document.createElement('div');
+//background.style.backgroundImage = 'url(https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80)';
+background.style.backgroundSize = 'cover';
+background.style.width = '100%';
+background.style.height = '600%';
+background.style.position = 'absolute';
+background.style.background = '#000000'
+background.style.top = '0';
+background.style.left = '0';
+document.body.appendChild(background);
+
+
+
+
+
+
+
+//make a text "Codilarity"
+var textmain = document.createElement('div');
+textmain.innerHTML = 'Codilarity';
+textmain.style.fontFamily = 'Arial';
+textmain.style.fontSize = '30px';
+textmain.style.height = '6%';textmain.style.width = '20%';
+textmain.style.color = '#ffffff';
+textmain.style.position = 'absolute';
+textmain.style.top = '1%';
+textmain.style.left = '5%';
+textmain.style.fontWeight = 'bold';
+textmain.style.zIndex = '2';
+textmain.style.opacity = '1';
+textmain.style.filter = 'blur(0px)';
+textmain.style.cursor = 'pointer';
+textmain.style.outline = 'none';
+document.body.appendChild(textmain);
+
+//when mouse hovers add some effects like shadown in the downward direction
+textmain.onmouseover = function() {
+    textmain.style.filter = 'blur(1px)';
+    textmain.style.opacity = '0.8';
+    textmain.style.cursor = 'pointer';
+}
+
+//when mouse leaves remove the effects
+textmain.onmouseout = function() {
+    textmain.style.filter = 'blur(0px)';
+    textmain.style.opacity = '1';
+    textmain.style.cursor = 'pointer';
+}
+
+//make text more round
+textmain.style.borderRadius = '5%';
+
+
+
+/* make a black navbar header at the screen top */
+var navbar = document.createElement('div');
+navbar.style.position = 'absolute';
+navbar.style.height = '7%';
+navbar.style.width = '100%';
+navbar.style.top = '0%';
+navbar.style.left = '0%';
+navbar.style.opacity = '1.0';
+navbar.style.backgroundColor = 'black';
+document.body.appendChild(navbar);
+
+/* align buttons products, blogs, manual, logout right next to each other from left to right inside navbar */
+var products = document.createElement('button');
+products.style.position = 'absolute';
+products.innerHTML = 'Products';
+products.style.float = 'right';
+products.style.left = '60%';
+products.style.top = '2%';
+products.style.width = '10%';
+products.style.height = '100%';
+products.style.textAlign = 'center';
+products.style.backgroundColor = '#000000';
+products.style.color = '#ffffff';
+products.style.fontSize = '15px';
+products.style.borderRadius = '10px';
+products.style.borderColor = "#000000";
+navbar.appendChild(products);
+
+var blogs = document.createElement('button');
+blogs.innerHTML = 'Blogs';
+blogs.style.float = 'right';
+blogs.style.left = '70%';
+blogs.style.top = '2%';
+blogs.style.position = 'absolute';
+blogs.style.width = '10%';
+blogs.style.height = '100%';
+blogs.style.textAlign = 'center';
+blogs.style.backgroundColor = '#000000';
+blogs.style.color = '#ffffff';
+blogs.style.fontSize = '15px';
+blogs.style.borderRadius = '10px';
+blogs.style.borderColor = "#000000";
+navbar.appendChild(blogs);
+
+var manual = document.createElement('button');
+manual.innerHTML = 'Manual';
+manual.style.float = 'right';
+manual.style.left = '80%';
+manual.style.top = '2%';
+manual.style.position = 'absolute';
+manual.style.width = '10%';
+manual.style.height = '100%';
+manual.style.textAlign = 'center';
+manual.style.backgroundColor = '#000000';
+manual.style.color = '#ffffff';
+manual.style.fontSize = '15px';
+manual.style.borderRadius = '10px';
+manual.style.borderColor = "#000000";
+navbar.appendChild(manual);
+
+var logout = document.createElement('button');
+logout.innerHTML = 'Logout';
+logout.style.float = 'right';
+logout.style.left = '90%';
+logout.style.top = '2%';
+logout.style.position = 'absolute';
+logout.style.width = '10%';
+logout.style.height = '100%';
+logout.style.textAlign = 'center';
+logout.style.backgroundColor = '#000000';
+logout.style.borderColor = "#000000";
+logout.style.color = '#ffffff';
+logout.style.fontSize = '15px';
+logout.style.borderRadius = '10px';
+navbar.appendChild(logout);
+
+
+var line = document.createElement('div');
+line.style.height = '5%';
+line.style.position = 'absolute';
+line.style.width = '100%';
+line.style.left = '0%';
+line.style.top = '99%';
+line.style.background = 'linear-gradient(to right, #F312CF, #00B2FF)';
+navbar.appendChild(line);
+
+// Codilarity Logo
+
+var img = document.createElement('img');
+img.style.position = 'absolute';
+img.src = 'https://github.com/ashwin-2001/Codilarity/blob/main/C%20square%20logo.png?raw=true';
+navbar.appendChild(img);
+
+/* make it small */
+img.style.width = '48px';
+img.style.height = '90%';
+img.style.left = '2%';
+img.style.top = '0%';
+
+//when the mouse hovers over above buttons, make the fonts of button glow
+products.addEventListener('mouseover', function(){
+	products.style.color = '#F312CF';
+	products.style.fontSize = '17px';
+});
+products.addEventListener('mouseout', function(){
+	products.style.color = '#ffffff';
+	products.style.fontSize = '15px';
+});
+blogs.addEventListener('mouseover', function(){
+	blogs.style.color = '#F312CF';
+	blogs.style.fontSize = '17px';
+});
+blogs.addEventListener('mouseout', function(){
+	blogs.style.color = '#ffffff';
+	blogs.style.fontSize = '15px';
+});
+manual.addEventListener('mouseover', function(){
+	manual.style.color = '#F312CF';
+	manual.style.fontSize = '17px';
+});
+manual.addEventListener('mouseout', function(){
+	manual.style.color = '#ffffff';
+	manual.style.fontSize = '15px';
+});
+logout.addEventListener('mouseover', function(){
+	logout.style.color = 'red';
+	logout.style.fontSize = '17px';
+});
+logout.addEventListener('mouseout', function(){
+	logout.style.color = '#ffffff';
+	logout.style.fontSize = '15px';
+});
+
+products.addEventListener('click', function() {
+    window.open('codilarity_Main.html', '_self');
+});
+manual.addEventListener('click', function() {
+    window.open('codilarity_Manual.html', '_self');
+});
+
+// make a big bold text "Manual" 120px at the center in a white font
+var manual1 = document.createElement('div');
+manual1.innerHTML = 'Manual';
+manual1.style.fontFamily = 'Arial';
+manual1.style.fontSize = '180px';
+manual1.style.height = '6%';manual1.style.width = '20%';
+manual1.style.color = '#ffffff';
+manual1.style.position = 'absolute';
+manual1.style.top = '40%';
+manual1.style.left = '30%';
+manual1.style.fontWeight = 'bold';
+manual1.style.zIndex = '2';
+manual1.style.opacity = '1';
+manual1.style.filter = 'blur(0px)';
+document.body.appendChild(manual1);
+
+
+// make a wide grey rectangle just below Manual
+var frame1 = document.createElement('div');
+frame1.style.height = '100%';frame1.style.width = '100%';
+frame1.style.backgroundColor = '#000000';
+frame1.style.position = 'absolute';
+frame1.style.top = '150%';
+frame1.style.left = '0%';
+frame1.style.borderRadius = '20px';
+frame1.style.zIndex = '1';
+document.body.appendChild(frame1);
+frame1.style.opacity = '1';
+
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+frame1.appendChild(line);
+
+
+// add a text "Code Flipper" at the top of line in a bold big named font
+var titleframe1 = document.createElement('div');
+titleframe1.innerHTML = 'Code Flipper';
+titleframe1.style.fontFamily = 'Arial';
+titleframe1.style.fontSize = '100px';
+titleframe1.style.height = '6%';titleframe1.style.width = '70%';
+titleframe1.style.color = '#ffffff';
+titleframe1.style.position = 'absolute';
+titleframe1.style.fontWeight = 'bold';
+titleframe1.style.top = '35%';
+titleframe1.style.left = '10%';
+titleframe1.style.zIndex = '2';
+frame1.appendChild(titleframe1);
+
+//content of frame1 is a big text description of the project
+var textframe1 = document.createElement('div');
+textframe1.style.height = '50%';textframe1.style.width = '30%';
+textframe1.style.position = 'absolute';
+textframe1.style.top = '20%';
+textframe1.style.left = '60%';
+textframe1.style.zIndex = '2';
+textframe1.style.color = '#ffffff';
+textframe1.style.fontFamily = 'Arial';
+textframe1.style.fontSize = '18px';
+textframe1.style.textAlign = 'justify';
+textframe1.style.lineHeight = '30px';
+textframe1.style.padding = '10px';
+textframe1.innerHTML = '<p>Code Flipper allows you to flip the code between variety of languages.</p><p>You can choose to flip the code between Javascript, Typescript, C++, Python and Java. The code is converted to the desired language by using a powerful AI model.</p><p>It is capable of understanding each and every variable meaning of your code. This helps a lot in converting the code.</p><p>On an interesting note, using code flipper supports all language available on GitHub, which means you can use it to convert the code from any language on GitHub.</p>';
+frame1.appendChild(textframe1);
+
+
+
+//frame2
+
+var frame2 = document.createElement('div');
+frame2.style.height = '100%';frame2.style.width = '100%';
+frame2.style.backgroundColor = '#000000';
+frame2.style.position = 'absolute';
+frame2.style.top = '260%';
+frame2.style.left = '0%';
+frame2.style.borderRadius = '20px';
+frame2.style.zIndex = '2';
+//frame2.style.boxShadow = "0px 0px 152px 2px #F312CF";
+document.body.appendChild(frame2);
+frame2.style.opacity = '1';
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+frame2.appendChild(line);
+
+
+// add a text "Codroid" at the top of line in a bold big named font
+var titleframe2 = document.createElement('div');
+titleframe2.innerHTML = 'Codroid';
+titleframe2.style.fontFamily = 'Arial';
+titleframe2.style.fontSize = '100px';
+titleframe2.style.height = '6%';titleframe2.style.width = '40%';
+titleframe2.style.color = '#ffffff';
+titleframe2.style.position = 'absolute';
+titleframe2.style.fontWeight = 'bold';
+titleframe2.style.top = '35%';
+titleframe2.style.left = '60%';
+titleframe2.style.zIndex = '2';
+frame2.appendChild(titleframe2);
+
+var textframe2 = document.createElement('div');
+textframe2.style.height = '50%';textframe2.style.width = '30%';
+textframe2.style.position = 'absolute';
+textframe2.style.top = '20%';
+textframe2.style.left = '15%';
+textframe2.style.zIndex = '2';
+textframe2.style.color = '#ffffff';
+textframe2.style.fontFamily = 'Arial';
+textframe2.style.fontSize = '18px';
+textframe2.style.textAlign = 'justify';
+textframe2.style.lineHeight = '30px';
+textframe2.style.padding = '10px';
+textframe2.innerHTML = '<p>Codroid is an Android app that performs two main functions.</p><p>One, it enables you to scan your code using camera or gallery and looking at the converted code in Codroid.<br></p><p>Two, it allows you to send this scanned code to any device on the same network via WiFi.</p><p>Now you can share your code with another device connected to the same data-stream, which can be put into memory by scanning rather than writing again in a different language</p>';
+frame2.appendChild(textframe2);
+
+
+
+
+
+// frame 3 is a clone of frame 1, which is used for codroid
+//add a frame 3 
+var frame3 = document.createElement('div');
+frame3.style.height = '100%';frame3.style.width = '100%';
+frame3.style.backgroundColor = '#000000';
+frame3.style.position = 'absolute';
+frame3.style.top = '370%';
+frame3.style.left = '0%';
+frame3.style.borderRadius = '20px';
+frame3.style.zIndex = '2';
+document.body.appendChild(frame3);
+frame3.style.opacity = '1';
+
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+frame3.appendChild(line);
+
+
+// add a text "Code Flipper" at the top of line in a bold big named font
+var titleframe3 = document.createElement('div');
+titleframe3.innerHTML = 'Opticode';
+titleframe3.style.fontFamily = 'Arial';
+titleframe3.style.fontSize = '100px';
+titleframe3.style.height = '6%';titleframe3.style.width = '40%';
+titleframe3.style.color = '#ffffff';
+titleframe3.style.position = 'absolute';
+titleframe3.style.fontWeight = 'bold';
+titleframe3.style.top = '35%';
+titleframe3.style.left = '15%';
+titleframe3.style.zIndex = '2';
+frame3.appendChild(titleframe3);
+
+//content of frame1 is a big text description of the project
+var textframe3 = document.createElement('div');
+textframe3.style.height = '50%';textframe3.style.width = '30%';
+textframe3.style.position = 'absolute';
+textframe3.style.top = '20%';
+textframe3.style.left = '60%';
+textframe3.style.zIndex = '2';
+textframe3.style.color = '#ffffff';
+textframe3.style.fontFamily = 'Arial';
+textframe3.style.fontSize = '18px';
+textframe3.style.textAlign = 'justify';
+textframe3.style.lineHeight = '30px';
+textframe3.style.padding = '10px';
+textframe3.innerHTML = '<p>Codroid is a tool to help you improve your coding skills by analysing your code.</p><p>It can automatically suggest you the best coding practices and can also help you to understand what other developers have written.</p><p>It gives you a detailed report of the code you write and shows you the most commonly used coding practices.</p><p>Codroid can also provide you with suggestions on how to improve your code according to the results it analyses.</p>';
+frame3.appendChild(textframe3);
+
+
+
+//frame4 is a clone of frame1, which is used for codroid
+//add a frame 3 
+var frame4 = document.createElement('div');
+frame4.style.height = '100%';frame4.style.width = '100%';
+frame4.style.backgroundColor = '#000000';
+frame4.style.position = 'absolute';
+frame4.style.top = '480%';
+frame4.style.left = '0%';
+frame4.style.borderRadius = '20px';
+frame4.style.opacity = '1';
+document.body.appendChild(frame4);
+
+
+var line = document.createElement('div');
+line.style.position = 'absolute';
+line.style.left = '55%';
+line.style.top = '0%';
+line.style.width = '3px';
+line.style.height = '100%';
+line.style.background = 'linear-gradient(to bottom, #000000,#F312CF, #00B2FF,#000000)';
+frame4.appendChild(line);
+
+
+// add a text "Code Flipper" at the top of line in a bold big named font
+var titleframe4 = document.createElement('div');
+titleframe4.innerHTML = 'SQLizer';
+titleframe4.style.fontFamily = 'Arial';
+titleframe4.style.fontSize = '100px';
+titleframe4.style.height = '6%';titleframe4.style.width = '40%';
+titleframe4.style.color = '#ffffff';
+titleframe4.style.position = 'absolute';
+titleframe4.style.fontWeight = 'bold';
+titleframe4.style.top = '35%';
+titleframe4.style.left = '60%';
+titleframe4.style.zIndex = '2';
+frame4.appendChild(titleframe4);
+
+//content of frame1 is a big text description of the project
+var textframe4 = document.createElement('div');
+textframe4.style.height = '50%';textframe4.style.width = '30%';
+textframe4.style.position = 'absolute';
+textframe4.style.top = '25%';
+textframe4.style.left = '15%';
+textframe4.style.zIndex = '2';
+textframe4.style.color = '#ffffff';
+textframe4.style.fontFamily = 'Arial';
+textframe4.style.fontSize = '18px';
+textframe4.style.textAlign = 'justify';
+textframe4.style.lineHeight = '30px';
+textframe4.style.padding = '10px';
+textframe4.innerHTML = '<p>Codroid is a tool to help you improve your coding skills by analysing your code.</p><p>It can automatically suggest you the best coding practices and can also help you to understand what other developers have written.</p><p>It gives you a detailed report of the code you write and shows you the most commonly used coding practices.</p><p>Codroid can also provide you with suggestions on how to improve your code according to the results it analyses.</p>';
+frame4.appendChild(textframe4);
+
+
+
+
+
+
+});
+        </script>
+    </head>
+</html>
